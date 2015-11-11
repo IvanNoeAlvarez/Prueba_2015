@@ -19,23 +19,33 @@ public class PoliticoLoco {
 	static Random rn = new Random(); //Generador de numeros aleatorios
 	static int numeroMinimo=0; //El número mínimo en el array es el 0
 	static int numeroMaximo=respuestas.length;
-	//Esta función devolverá una rrespuesta aleatoria de nuestro político loco
+	//Esta función devolverá una respuesta aleatoria de nuestro político loco
 	public static String devolverRespuesta(){
-		int numeroDentroDelArray = rn.nextInt(numeroMaximo - numeroMinimo + 1) + numeroMinimo;
+		int numeroDentroDelArray = rn.nextInt(numeroMaximo);
 		
 		return respuestas[numeroDentroDelArray];
 	}
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in); // Creamos un objeto de la clase Scanner
+		Scanner resp = new Scanner(System.in); // Creamos un objeto de la clase Scanner
 		System.out.println("--------------------------------");
 		System.out.println("---------- POLÍTICO LOCO--------");
 		while(true){
-			System.out.print("¿Cual es tu pregunta?: ");
-			//Pregunta
-			String pregunta;
-			pregunta= in.nextLine();
-			System.out.println(devolverRespuesta());
+			System.out.print("¿Quieres hacer otra pregunta?");
+			String respuesta;
+			respuesta= resp.nextLine();
+			if (respuesta.equalsIgnoreCase("no")){
+				System.out.println("Bien, gracias por la entrevista");
+				System.exit(0);
+			}else{	
+
+				System.out.print("¿Cual es tu pregunta?: ");
+				//Pregunta
+				String pregunta;
+				pregunta= in.nextLine();
+				System.out.println(devolverRespuesta());
+			}
 		}
 
 	}
