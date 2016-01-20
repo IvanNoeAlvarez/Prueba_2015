@@ -21,6 +21,9 @@ descifrar();
 			solucion = solucion + fraseCodificada.charAt(x+1) + fraseCodificada.charAt(x);			
 			} 
 		solucion = solucion.replace(substitutoVOCAL_A, "A");
+	int a = 99999999;
+	int b = 55555555;
+	System.out.println(a*b);
 	
 	}
 		
