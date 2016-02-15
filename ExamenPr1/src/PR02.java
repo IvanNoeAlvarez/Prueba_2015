@@ -7,19 +7,20 @@ public class PR02 {
 		String mensajeCodificado = "";
 		String temporal = "";
 
-		// Pasamos todo a mayusculas
-		mensaje.toUpperCase();
+		// Pasamos todo a mayusculas y asignamos a codificado
+		mensaje=mensaje.toUpperCase();
+		mensajeCodificado=mensaje;
 
 		//mientras la longitud de mensajeCodficado sea mayor que i... ...i=i+2
-		for (int i=0;i<mensajeCodificado.length();i+=2) {
+		for(int i=0;i<mensajeCodificado.length();i=i+2) {
 			//si la longitud de mensajeCodficado es igual que i+1...
-			if (i + 1 == mensajeCodificado.length()) {
+			if (i+1==mensajeCodificado.length()) {
 				//añade a temporal la letra en la posicion i de mensajeCodficado
-				temporal += mensajeCodificado.charAt(i);
+				temporal=temporal+mensajeCodificado.charAt(i);
 				//...si no es igual que i+1
 			} else {
 				//añade a temporal la letra en la posicion i+1 de mensajeCodficado y la de la posicion i
-				temporal += mensajeCodificado.charAt(i + 1) + mensajeCodificado.charAt(i);
+				temporal = temporal + mensajeCodificado.charAt(i+1)+mensajeCodificado.charAt(i);
 			}
 		}
 		//asignacion final e impresion
